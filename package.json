@@ -1,0 +1,37 @@
+{
+  "name": "trabajo-k8s",
+  "version": "1.0.0",
+  "description": "**Descripción:** El trabajo involucra la creación de microservicios individualmente desplegables, utilizando contenedores Docker, un orquestador de contenedores como Kubernetes y herramientas como Helm para la gestión de paquetes y configuraciones.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch src --exec ts-node src/app.ts",
+    "build": "tsc",
+    "start": "node dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebasvelasco353/trabajo-K8S.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/sebasvelasco353/trabajo-K8S/issues"
+  },
+  "homepage": "https://github.com/sebasvelasco353/trabajo-K8S#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.9.3",
+    "nodemon": "^3.1.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}
