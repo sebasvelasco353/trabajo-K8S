@@ -6,6 +6,9 @@ info:
 http:
   method: GET
   url: http://localhost:3000/reservations
+  headers:
+    - name: Authorization
+      value: Bearer randomTokenHere
   auth: inherit
 
 settings:
