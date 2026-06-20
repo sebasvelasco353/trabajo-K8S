@@ -1,6 +1,18 @@
 import { reservation } from "../shared/types";
 
-let mockDatabase: reservation[] = [];
+let mockDatabase: reservation[] = [
+  {
+    id: "254",
+    user_id: "qgwrgwegewg",
+    start_date: new Date(
+      "Fri Jun 19 2026 22:27:27 GMT-0500 (hora estándar de Colombia)",
+    ),
+    end_date: new Date(
+      "Fri Jun 19 2026 23:27:27 GMT-0500 (hora estándar de Colombia)",
+    ),
+    location_id: "here",
+  },
+];
 
 export const fetchReservation = (id: string) => {
   const result = mockDatabase.find((reservation) => {

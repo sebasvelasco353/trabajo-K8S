@@ -19,8 +19,7 @@ export const getAll = async (_req: Request, res: Response) => {
 
 export const getById = async (req: Request, res: Response) => {
   try {
-    const id = req.params.reservationId as string;
-    console.log(req.params.reservationId);
+    const id = req.params.id as string;
 
     const reservation = await getReservationById(id);
     return res.status(200).json({ data: reservation });
@@ -29,6 +28,7 @@ export const getById = async (req: Request, res: Response) => {
   }
 };
 
+// FIXME: returns true
 export const getByUserId = async (req: Request, res: Response) => {
   try {
     const id = req.params.userId as string;
@@ -43,7 +43,7 @@ export const getByUserId = async (req: Request, res: Response) => {
 export const createNewReservation = async (req: Request, res: Response) => {
   try {
     const newReservation = {
-      id: (Math.random() + Math.random()).toString(),
+      id: Math.trunc(Math.random() * 1000).toString(),
       ...req.body,
     };
     const result = await saveNewReservation(newReservation);
@@ -55,8 +55,7 @@ export const createNewReservation = async (req: Request, res: Response) => {
 
 export const deleteReservation = async (req: Request, res: Response) => {
   try {
-    const id = req.params.userId as string;
-
+    const id = req.params.id as string;
     await deleteReservationById(id);
     return res.status(200).json({ data: "succesfully deleted" });
   } catch (error) {
@@ -66,7 +65,9 @@ export const deleteReservation = async (req: Request, res: Response) => {
 
 export const modifyReservation = async (req: Request, res: Response) => {
   try {
-    const id = req.params.userId as string;
+    const id = req.params.id as string;
+    console.log("holi", req.params);
+
     const newData = req.body;
 
     const reservation = await editReservation(id, newData);

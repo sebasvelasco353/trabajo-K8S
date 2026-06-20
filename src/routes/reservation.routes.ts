@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import {
   getAll,
   getById,
@@ -11,8 +11,8 @@ import {
 export const reservationsRouter = express.Router();
 
 reservationsRouter.get("/", getAll);
-reservationsRouter.get("/:reservationId", getById);
+reservationsRouter.get("/:id", getById);
 reservationsRouter.get("/byUser/:userId", getByUserId);
 reservationsRouter.post("/", createNewReservation);
 reservationsRouter.delete("/:id", deleteReservation);
-reservationsRouter.put("/:reservationId", modifyReservation);
+reservationsRouter.put("/:id", modifyReservation);
