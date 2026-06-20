@@ -1,5 +1,5 @@
 import express, { Express, Response } from "express";
-import { reservationsRouter } from "./modules/reservations/reservation.routes";
+import { reservationsRouter } from "./routes/reservation.routes";
 import { logger } from "./middleware/logger.middleware";
 import { authenticateToken } from "./middleware/auth.middleware";
 
@@ -15,7 +15,7 @@ app.get("/health", (_req, res: Response) => {
   });
 });
 
-app.use("/reservations", authenticateToken, reservationsRouter);
+app.use("/api/reservations", authenticateToken, reservationsRouter);
 
 app.listen(port, () => {
   console.log(`reservations service running`);
